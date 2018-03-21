@@ -70,7 +70,10 @@ public class CoffeeMaker {
         if(r != null) {
 	        for(int i = 0; i < NUM_RECIPES; i++) {
 	            if(r.equals(recipeArray[i])) {
-	                recipeArray[i] = recipeArray[i]; 
+	            	
+	            	//Statemente changed from recipeArray[i] = recipeArray[i]
+	            	//to recipeArray[i] = null
+	                recipeArray[i] = null; 
 	                canDeleteRecipe = true;
 	            }
 	        }
