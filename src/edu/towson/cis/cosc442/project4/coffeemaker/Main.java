@@ -101,7 +101,8 @@ public class Main {
         }
         final String recipeToDeleteString = inputOutput("Please select the number of the recipe to delete.");
         final int recipeToDelete = stringToInt(recipeToDeleteString) - 1;
-	    if(recipeToDelete < 0) {
+	    
+        if(recipeToDelete < 0) {
 	    	mainMenu();
 	    }
         
