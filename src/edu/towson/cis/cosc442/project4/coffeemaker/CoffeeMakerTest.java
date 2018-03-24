@@ -50,6 +50,7 @@ public class CoffeeMakerTest extends TestCase {
 		assertEquals("New amount", 18, cm.checkInventory().getSugar());
 		assertEquals("New amount", 17, cm.checkInventory().getChocolate());
 		}
+	
 	public void testCheckinventory1() {
 		assertEquals(15, cm.checkInventory().getCoffee());
 		assertEquals(15, cm.checkInventory().getMilk());
@@ -87,6 +88,34 @@ public class CoffeeMakerTest extends TestCase {
 	public void testGetRecipeForName() {
 		cm.addRecipe(r1);
 		assertEquals("Got incorrect recipe", "Coffee", cm.getRecipeForName("Coffee").getName());
-
 	}
+	
+	public void testAddInvalidInventory1() {
+		cm.addInventory(-5, 4, 3, 2);
+	assertNotSame(10, cm.checkInventory().getCoffee());
+	}
+	
+	public void testAddInvalidInventory2() {
+		cm.addInventory(5, -4, 3, 2);
+	assertNotSame(11, cm.checkInventory().getMilk());
+	}
+	
+	public void testAddInvalidInventory3() {
+		cm.addInventory(5, 4, -3, 2);
+	assertNotSame(12, cm.checkInventory().getSugar());
+	}
+	
+	public void testAddInvalidInventory4() {
+		cm.addInventory(5, 4, 3, -2);
+	assertNotSame(13, cm.checkInventory().getChocolate());
+	}
+	
+	public void testAddInventory5() {
+		cm.addInventory(0, 0, 0, 0);
+	assertEquals("New amount", 15, cm.checkInventory().getCoffee());
+	assertEquals("New amount", 15, cm.checkInventory().getMilk());
+	assertEquals("New amount", 15, cm.checkInventory().getSugar());
+	assertEquals("New amount", 15, cm.checkInventory().getChocolate());
+	}
+	
 }

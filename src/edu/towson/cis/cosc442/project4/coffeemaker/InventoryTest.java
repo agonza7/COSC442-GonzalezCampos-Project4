@@ -27,6 +27,12 @@ public class InventoryTest {
 	}
 	
 	@Test
+	public void setCoffeeZero() {
+		inventory.setCoffee(0);
+		assertEquals("Invalid amount of coffee", 0, inventory.getCoffee());
+	}
+	
+	@Test
 	public void testSetMilk1() {
 		inventory.setMilk(7);
 		assertEquals("Cant set Milk", 7, inventory.getMilk());
@@ -36,6 +42,12 @@ public class InventoryTest {
 	public void setInvalidMilk() {
 		inventory.setMilk(-99);
 		assertEquals("Invalid amount of Milk", 0, inventory.getMilk());
+	}
+	
+	@Test
+	public void testSetMilkZero() {
+		inventory.setMilk(0);
+		assertEquals("Cant set Milk", 0, inventory.getMilk());
 	}
 	
 	@Test
@@ -51,6 +63,12 @@ public class InventoryTest {
 	}
 	
 	@Test
+	public void testSetSugarZero() {
+		inventory.setSugar(0);
+		assertEquals("Cant set Sugar", 0, inventory.getSugar());
+	}
+	
+	@Test
 	public void testSetChocolate1() {
 		inventory.setChocolate(3);
 		assertEquals("Cant set Chocolate", 3, inventory.getChocolate());
@@ -60,6 +78,12 @@ public class InventoryTest {
 	public void setInvalidChocolate() {
 		inventory.setChocolate(-99);
 		assertEquals("Invalid amount of chocolate", 0, inventory.getChocolate());
+	}
+	
+	@Test
+	public void testSetChocolateZero() {
+		inventory.setChocolate(0);
+		assertEquals("Cant set Chocolate", 0, inventory.getChocolate());
 	}
 	
 	@Test
